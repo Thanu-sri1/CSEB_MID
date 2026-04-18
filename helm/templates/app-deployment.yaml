@@ -11,7 +11,7 @@ spec:
     blueGreen:
       activeService: skillexchange-active-service
       previewService: skillexchange-preview-service
-      autoPromotionEnabled: false
+      autoPromotionEnabled: true
       scaleDownDelaySeconds: 30
   selector:
     matchLabels:

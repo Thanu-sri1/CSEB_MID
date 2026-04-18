@@ -1,12 +1,12 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: Rollout
 metadata:
   name: skillexchange-app
   labels:
     app: skillexchange-app
     version: v1
 spec:
-  replicas: 3
+  replicas: 2
   strategy:
     blueGreen:
       activeService: skillexchange-active-service
@@ -107,8 +107,8 @@ metadata:
     app: skillexchange-app
 spec:
   scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
+    apiVersion: argoproj.io/v1alpha1
+    kind: Rollout
     name: skillexchange-app
   minReplicas: 2
   maxReplicas: 10
